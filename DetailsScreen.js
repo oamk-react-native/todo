@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 
 export function DetailsScreen({route, navigation}) {
-  const [todo, setTodo] = useState(route.params?.todo);
+  const [todo, setTodo] = useState('');
 
   /**
    * Lisätään tallenna-painike työkaluvalikkoon. Kun tallennusta painetaan, välitetään tallennettu tehtävä takaisin
@@ -13,7 +13,7 @@ export function DetailsScreen({route, navigation}) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: {
-        backgroundColor: '#a4c639'
+        backgroundColor: '#f0f0f0'
       },
       headerRight: () => (
         <FontAwesome style={styles.navButton} name="save" onPress={() => navigation.navigate('Home',{todo: todo})} />

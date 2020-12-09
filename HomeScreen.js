@@ -16,7 +16,7 @@ export function HomeScreen({navigation,route}) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: {
-        backgroundColor: '#a4c639'
+        backgroundColor: '#f0f0f0'
       },
       headerRight: () => (
         <FontAwesome style={styles.navButton} name="plus" onPress={() => navigation.navigate('Todo')} />
@@ -26,7 +26,6 @@ export function HomeScreen({navigation,route}) {
 
   useEffect(() => {
     if (route.params?.todo) {
-      console.log(route.params?.todo);
       const newTodos = [...todos,route.params?.todo];
       setTodos(newTodos);
     }
